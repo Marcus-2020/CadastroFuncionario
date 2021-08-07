@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CadastroFuncionario.BibliotecaDeAcessoADados\CadastroFuncionario.BibliotecaDeAcessoADados.csproj" />
+    <ProjectReference Include="..\CadastroFuncionario.API\CadastroFuncionario.API.csproj" />
+  </ItemGroup>
+
 </Project>
