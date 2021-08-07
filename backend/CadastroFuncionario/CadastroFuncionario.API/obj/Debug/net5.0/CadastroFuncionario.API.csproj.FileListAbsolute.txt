@@ -29,3 +29,8 @@
 /home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API/obj/Debug/net5.0/ref/CadastroFuncionario.API.dll
 /home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API/obj/Debug/net5.0/CadastroFuncionario.API.pdb
 /home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API/obj/Debug/net5.0/CadastroFuncionario.API.genruntimeconfig.cache
+/home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
+/home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.InMemory.dll
+/home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API/bin/Debug/net5.0/Microsoft.Extensions.DependencyInjection.dll
+/home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API/bin/Debug/net5.0/System.Diagnostics.DiagnosticSource.dll
