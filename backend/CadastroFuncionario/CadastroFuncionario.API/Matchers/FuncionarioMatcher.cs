@@ -21,6 +21,7 @@ namespace CadastroFuncionario.API.Matchers
             var funcionario = (IFuncionario)ClonarObjetoHelper.ClonarObjeto(_funcionario);
 
             // Transfere os dados do DTO para o objeto IFuncionario
+            funcionario.Id = dto.Id;
             funcionario.Nome = dto.Nome;
             funcionario.Sobrenome = dto.Sobrenome;
             funcionario.DataNascimento = dto.DataNascimento;
@@ -39,6 +40,7 @@ namespace CadastroFuncionario.API.Matchers
             var dto = (IFuncionarioDTO)ClonarObjetoHelper.ClonarObjeto(_funcionario);
 
             // Transfere os dados do IFuncionario para o DTO 
+            dto.Id = _funcionario.Id;
             dto.Nome = funcionario.Nome;
             dto.Sobrenome = funcionario.Sobrenome;
             dto.DataNascimento = funcionario.DataNascimento;

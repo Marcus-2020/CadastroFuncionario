@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using CadastroFuncionario.API.Matchers;
 using CadastroFuncionario.API.Models;
 using CadastroFuncionario.BibliotecaDeAcessoADados.Contexts;
+using CadastroFuncionario.BibliotecaDeAcessoADados.Models;
+using CadastroFuncionario.BibliotecaDeAcessoADados.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,7 +16,7 @@ namespace CadastroFuncionario.API.Controllers
     [ApiController]
     public class FuncionariosController : ControllerBase
     {
-        private readonly ApiContext _apiContext;
+        private readonly IFuncionarioRepository _repositorio;
         private readonly FuncionarioMatcher _matcher;
         private List<IFuncionarioDTO> _funcionarios;
 
@@ -27,9 +29,9 @@ namespace CadastroFuncionario.API.Controllers
             this._funcionarios = funcionarios;
         }
 
-        public FuncionariosController(ApiContext apiContext, FuncionarioMatcher matcher)
+        public FuncionariosController(IFuncionarioRepository repositorio, FuncionarioMatcher matcher)
         {
-            this._apiContext = apiContext;
+            this._repositorio = repositorio;
             this._matcher = matcher;
         }
 
@@ -40,9 +42,11 @@ namespace CadastroFuncionario.API.Controllers
 
             try
             {
-                await _apiContext.Funcionarios.ForEachAsync((f) => {
-                    var func = _matcher.MatchFuncionarioDTO(f);
-                    funcionarios.Add(func);
+                var todos = await _repositorio.GetTodos();
+
+                todos.ForEach((f) => {
+                    var dto = _matcher.MatchFuncionarioDTO(f);
+                    funcionarios.Add(dto);
                 });
             }
             catch (Exception ex)
@@ -61,7 +65,7 @@ namespace CadastroFuncionario.API.Controllers
                 return BadRequest();
             }
 
-            var funcionario = await _apiContext.Funcionarios.FirstOrDefaultAsync(f => f.Id == id);
+            var funcionario = await _repositorio.GetPorId((int)id);
 
             if (funcionario == null)
             {
@@ -71,6 +75,22 @@ namespace CadastroFuncionario.API.Controllers
             var dto = _matcher.MatchFuncionarioDTO(funcionario);
 
             return Ok(dto);
+        }
+
+        public async Task<ActionResult<IFuncionarioDTO>> PostFuncionario(IFuncionarioDTO dto)
+        {
+            if (dto == null)
+            {
+                return BadRequest(dto);
+            }
+
+            var funcionarioParaInserir = _matcher.MatchFuncionario(dto);
+
+            var funcionarioInserido = (IFuncionario) await _repositorio.Criar(funcionarioParaInserir);
+
+            var dtoDeRetorno =  _matcher.MatchFuncionarioDTO(funcionarioInserido);
+
+            return Ok(dtoDeRetorno);
         }
 
     }
