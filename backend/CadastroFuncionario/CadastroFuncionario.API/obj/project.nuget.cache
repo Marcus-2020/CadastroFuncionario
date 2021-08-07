@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "wJvMMV5uF/orPZq4AhZkS6JY8JEDu/wSn4srgzD5GwNm9qoMnAsbyPgqz6SY9y7ghE0beF49tGST68pkjjeQgg==",
+  "success": true,
+  "projectFilePath": "/home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API/CadastroFuncionario.API.csproj",
+  "expectedPackageFiles": [
+    "/home/marcus/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/home/marcus/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/marcus/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "/home/marcus/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "/home/marcus/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "/home/marcus/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
