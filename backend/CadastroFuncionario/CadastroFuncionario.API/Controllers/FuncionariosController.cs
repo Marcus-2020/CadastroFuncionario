@@ -54,6 +54,11 @@ namespace CadastroFuncionario.API.Controllers
                 throw new Exception(ex.Message);
             }
 
+            if (funcionarios == null || funcionarios.Count == 0)
+            {
+                return NotFound();
+            }
+
             return Ok(funcionarios);
         }
 

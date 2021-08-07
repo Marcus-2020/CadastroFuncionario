@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CadastroFuncionario.API.Matchers;
+using CadastroFuncionario.API.Models;
 using CadastroFuncionario.BibliotecaDeAcessoADados.Contexts;
 using CadastroFuncionario.BibliotecaDeAcessoADados.Models;
 using Microsoft.AspNetCore.Builder;
@@ -33,6 +34,7 @@ namespace CadastroFuncionario.API
             services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase("testeDb"));
 
             services.AddTransient<IFuncionario, Funcionario>();
+            services.AddTransient<IFuncionarioDTO, FuncionarioDTO>();
             services.AddScoped<FuncionarioMatcher>();
 
             services.AddControllers();
