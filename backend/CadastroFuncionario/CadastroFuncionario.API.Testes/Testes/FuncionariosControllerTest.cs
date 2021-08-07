@@ -16,32 +16,28 @@ namespace CadastroFuncionario.API.Testes.Testes
         public FuncionariosControllerTest()
         {
             _listaFuncionariosMock = new Mock<List<IFuncionarioDTO>>();
-            _funcionariosController = new FuncionariosController(_listaFuncionariosMock.Object);
+            _funcionariosController = new FuncionariosController();
+            //_funcionariosController = new FuncionariosController(_listaFuncionariosMock.Object);
         }
 
         [Fact]
-        public void GetTeste_BuscarFuncionarioNoBancoRetornaLista()
-        {
-            // arrange
-            var mockFuncionarios = new List<IFuncionarioDTO> {
-                                        new FuncionarioDTO { 
-                                            Nome = "Marcus", 
-                                            Sobrenome = "Santos", 
-                                            DataNascimento = "1997-02-12",
-                                            Setor = "Desenovolvimento/Inovação",
-                                            Funcao = "Desenvolvedor",
-                                            Experiencia = "Júnior",
-                                            TipoDeTrabalho = "Remoto",
-                                            Salario = 3000.00M }
-                                    };
-            
-            _listaFuncionariosMock.Object.AddRange(mockFuncionarios);
-            
+        public void GetTeste_BuscarFuncionariosNoBancoRetornaLista()
+        {            
             // act
             var resultado = _funcionariosController.GetTodosFuncionarios();
 
             // assert
             var modelo = Assert.IsAssignableFrom<Task<ActionResult<List<IFuncionarioDTO>>>>(resultado);
+        }
+
+        [Fact]
+        public void GetTeste_BuscarFuncionarioNoBancoRetornaFuncionario()
+        {
+            // act
+            var resultado = _funcionariosController.GetFuncionarioPorId(1);
+
+            // assert
+            var modelo = Assert.IsAssignableFrom<Task<ActionResult<IFuncionarioDTO>>>(resultado);
         }
     }
 }

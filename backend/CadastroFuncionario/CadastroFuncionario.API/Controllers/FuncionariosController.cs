@@ -18,6 +18,10 @@ namespace CadastroFuncionario.API.Controllers
         private readonly FuncionarioMatcher _matcher;
         private List<IFuncionarioDTO> _funcionarios;
 
+        public FuncionariosController()
+        {
+        }
+        
         public FuncionariosController(List<IFuncionarioDTO> funcionarios)
         {
             this._funcionarios = funcionarios;
