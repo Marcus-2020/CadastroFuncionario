@@ -1,0 +1,6 @@
+/home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API.Testes/bin/Debug/net5.0/CoverletSourceRootsMapping
+/home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API.Testes/obj/Debug/net5.0/CadastroFuncionario.API.Testes.csproj.AssemblyReference.cache
+/home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API.Testes/obj/Debug/net5.0/CadastroFuncionario.API.Testes.GeneratedMSBuildEditorConfig.editorconfig
+/home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API.Testes/obj/Debug/net5.0/CadastroFuncionario.API.Testes.AssemblyInfoInputs.cache
+/home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API.Testes/obj/Debug/net5.0/CadastroFuncionario.API.Testes.AssemblyInfo.cs
+/home/marcus/Projetos/Programas/Meus Programas/CadastroFuncionario/backend/CadastroFuncionario/CadastroFuncionario.API.Testes/obj/Debug/net5.0/CadastroFuncionario.API.Testes.csproj.CoreCompileInputs.cache
