@@ -1,5 +1,4 @@
 # CadastroFuncionarios API  
-***Projeto em desenvolvimento!***  
   
 ### Objetivos:
 > - Permitir o cadastro de funcionários no banco de dados.
