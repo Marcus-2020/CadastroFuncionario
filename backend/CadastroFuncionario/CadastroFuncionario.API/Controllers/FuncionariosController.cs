@@ -4,41 +4,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using CadastroFuncionario.API.Matchers;
 using CadastroFuncionario.API.Models;
-using CadastroFuncionario.BibliotecaDeAcessoADados.Contexts;
-using CadastroFuncionario.BibliotecaDeAcessoADados.Models;
 using CadastroFuncionario.BibliotecaDeAcessoADados.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace CadastroFuncionario.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/funcionarios")]
     [ApiController]
     public class FuncionariosController : ControllerBase
     {
         private readonly IFuncionarioRepository _repositorio;
-        private readonly FuncionarioMatcher _matcher;
-        private List<IFuncionarioDTO> _funcionarios;
+        private readonly IFuncionarioMatcher _matcher;
 
-        public FuncionariosController()
-        {
-        }
-        
-        public FuncionariosController(List<IFuncionarioDTO> funcionarios)
-        {
-            this._funcionarios = funcionarios;
-        }
-
-        public FuncionariosController(IFuncionarioRepository repositorio, FuncionarioMatcher matcher)
+        public FuncionariosController(IFuncionarioRepository repositorio, IFuncionarioMatcher matcher)
         {
             this._repositorio = repositorio;
             this._matcher = matcher;
         }
 
         [HttpGet("")]
-        public async Task<ActionResult<List<IFuncionarioDTO>>> GetTodosFuncionarios()
+        public async Task<ActionResult<List<FuncionarioDTO>>> GetTodosFuncionarios()
         {
-            var funcionarios = new List<IFuncionarioDTO>();
+            var funcionarios = new List<FuncionarioDTO>();
 
             try
             {
@@ -54,16 +41,11 @@ namespace CadastroFuncionario.API.Controllers
                 throw new Exception(ex.Message);
             }
 
-            if (funcionarios == null || funcionarios.Count == 0)
-            {
-                return NotFound();
-            }
-
             return Ok(funcionarios);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IFuncionarioDTO>> GetFuncionarioPorId(int? id)
+        public async Task<ActionResult<FuncionarioDTO>> GetFuncionarioPorId(int? id)
         {
             if (id == null)
             {
@@ -82,7 +64,8 @@ namespace CadastroFuncionario.API.Controllers
             return Ok(dto);
         }
 
-        public async Task<ActionResult<IFuncionarioDTO>> PostFuncionario(IFuncionarioDTO dto)
+        [HttpPost]
+        public async Task<ActionResult<FuncionarioDTO>> PostFuncionario(FuncionarioDTO dto)
         {
             if (dto == null)
             {
@@ -91,7 +74,7 @@ namespace CadastroFuncionario.API.Controllers
 
             var funcionarioParaInserir = _matcher.MatchFuncionario(dto);
 
-            var funcionarioInserido = (IFuncionario) await _repositorio.Criar(funcionarioParaInserir);
+            var funcionarioInserido = await _repositorio.Criar(funcionarioParaInserir);
 
             var dtoDeRetorno =  _matcher.MatchFuncionarioDTO(funcionarioInserido);
 

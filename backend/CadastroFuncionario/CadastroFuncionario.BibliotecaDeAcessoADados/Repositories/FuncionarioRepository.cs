@@ -15,33 +15,38 @@ namespace CadastroFuncionario.BibliotecaDeAcessoADados.Repositories
             this._context = context;
         }
 
-        public async Task<List<IFuncionario>> GetTodos()
+        public async Task<List<Funcionario>> GetTodos()
         {
-            var funcionarios = await _context.Funcionarios.ToListAsync();
+            List<Funcionario> funcionarios = new List<Funcionario>();
+            await _context.Funcionarios.ForEachAsync((f) => {
+                Funcionario funcionario = f;
+                funcionarios.Add(funcionario);
+            });
             
             return funcionarios;
         }
 
-        public async Task<IFuncionario> GetPorId(int id)
+        public async Task<Funcionario> GetPorId(int id)
         {
             var entidade = await _context.Funcionarios.FirstOrDefaultAsync(e => e.Id == id);
 
             return entidade;
         }
 
-        public async Task<IFuncionario> Criar(IFuncionario entidade)
+        public async Task<Funcionario> Criar(Funcionario entidade)
         {
-            var resultado = (IFuncionario) await _context.AddAsync(entidade);
+            var resultado = await _context.Funcionarios.AddAsync(entidade);
+            await _context.SaveChangesAsync();
 
-            return resultado;
+            return resultado.Entity;
         }
         
-        public async Task<IFuncionario> AtualizarPorId(int id, IFuncionario entidade)
+        public async Task<Funcionario> AtualizarPorId(int id, Funcionario entidade)
         {
             throw new System.NotImplementedException();
         }
 
-        public async Task<IFuncionario> DeletarPorId(int id)
+        public async Task<Funcionario> DeletarPorId(int id)
         {
             throw new System.NotImplementedException();
         }

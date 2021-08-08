@@ -5,7 +5,7 @@ using CadastroFuncionario.BibliotecaDeAcessoADados.Models;
 
 namespace CadastroFuncionario.API.Matchers
 {
-    public class FuncionarioMatcher
+    public class FuncionarioMatcher : IFuncionarioMatcher
     {
         private readonly IFuncionario _funcionario;
         private readonly IFuncionarioDTO _funcionarioDto;
@@ -15,10 +15,10 @@ namespace CadastroFuncionario.API.Matchers
             this._funcionario = funcionario;
             this._funcionarioDto = funcionarioDto;
         }
-        public IFuncionario MatchFuncionario(IFuncionarioDTO dto)
+        public Funcionario MatchFuncionario(IFuncionarioDTO dto)
         {
             // Clona o objeto injetado IFuncionario vázio para um novo objeto IFuncionario
-            var funcionario = (IFuncionario)ClonarObjetoHelper.ClonarObjeto(_funcionario);
+            var funcionario = (Funcionario)ClonarObjetoHelper.ClonarObjeto(_funcionario);
 
             // Transfere os dados do DTO para o objeto IFuncionario
             funcionario.Id = dto.Id;
@@ -30,17 +30,17 @@ namespace CadastroFuncionario.API.Matchers
             funcionario.Experiencia = dto.Experiencia;
             funcionario.TipoDeTrabalho = dto.TipoDeTrabalho;
             funcionario.Salario = dto.Salario;
-            
+
             return funcionario;
         }
 
-        public IFuncionarioDTO MatchFuncionarioDTO(IFuncionario funcionario)
+        public FuncionarioDTO MatchFuncionarioDTO(IFuncionario funcionario)
         {
             // Clona o objeto injetado IFuncionarioDTO vázio para um novo objeto IFuncionarioDTO
-            var dto = (IFuncionarioDTO)ClonarObjetoHelper.ClonarObjeto(_funcionario);
+            var dto = (FuncionarioDTO)ClonarObjetoHelper.ClonarObjeto(_funcionarioDto);
 
             // Transfere os dados do IFuncionario para o DTO 
-            dto.Id = _funcionario.Id;
+            dto.Id = funcionario.Id;
             dto.Nome = funcionario.Nome;
             dto.Sobrenome = funcionario.Sobrenome;
             dto.DataNascimento = funcionario.DataNascimento;

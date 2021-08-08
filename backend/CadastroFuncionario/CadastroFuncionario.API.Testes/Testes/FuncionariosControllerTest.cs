@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CadastroFuncionario.API.Controllers;
+using CadastroFuncionario.API.Matchers;
 using CadastroFuncionario.API.Models;
 using CadastroFuncionario.BibliotecaDeAcessoADados.Models;
+using CadastroFuncionario.BibliotecaDeAcessoADados.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using Xunit;
@@ -13,11 +15,15 @@ namespace CadastroFuncionario.API.Testes.Testes
     {
         private readonly FuncionariosController _funcionariosController;
         private Mock<List<IFuncionarioDTO>> _listaFuncionariosMock;
+        private readonly Mock<FuncionarioRepository> _funcionariosRepository;
+        private readonly Mock<FuncionarioMatcher> _funcionarioMatcher;
 
         public FuncionariosControllerTest()
         {
             _listaFuncionariosMock = new Mock<List<IFuncionarioDTO>>();
-            _funcionariosController = new FuncionariosController();
+            _funcionariosRepository = new Mock<FuncionarioRepository>();
+            _funcionarioMatcher = new Mock<FuncionarioMatcher>();
+            _funcionariosController = new FuncionariosController(_funcionariosRepository.Object, _funcionarioMatcher.Object);
         }
 
         [Fact]
@@ -43,7 +49,7 @@ namespace CadastroFuncionario.API.Testes.Testes
         [Fact]
         public void PostTeste_InserirFuncionarioNoBancoRetornaFuncionario()
         {
-            IFuncionarioDTO funcionario = new FuncionarioDTO { 
+            FuncionarioDTO funcionario = new FuncionarioDTO { 
                                             Nome = "Marcus", 
                                             Sobrenome = "Santos", 
                                             DataNascimento = "1997-02-12",

@@ -8,6 +8,6 @@ namespace CadastroFuncionario.BibliotecaDeAcessoADados.Contexts
         public ApiContext(DbContextOptions<ApiContext> options) : base(options)
         {}
 
-        public DbSet<IFuncionario> Funcionarios { get; set; }
+        public DbSet<Funcionario> Funcionarios { get; set; }
     }
 }

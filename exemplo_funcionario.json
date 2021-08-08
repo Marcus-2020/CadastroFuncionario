@@ -1,0 +1,32 @@
+[
+  {
+    "nome": "Marcus",
+    "sobrenome": "Santos",
+    "dataNascimento": "1997-02-12",
+    "setor": "Dev",
+    "funcao": "Dev",
+    "experiencia": "Júnior",
+    "tipoDeTrabalho": "Remoto",
+    "salario": 3000
+  },
+  {
+    "nome": "Marcus",
+    "sobrenome": "Santos",
+    "dataNascimento": "1997-02-12",
+    "setor": "Dev",
+    "funcao": "Dev",
+    "experiencia": "Pleno",
+    "tipoDeTrabalho": "Remoto",
+    "salario": 4200
+  },
+  {
+    "nome": "Marcus",
+    "sobrenome": "Santos",
+    "dataNascimento": "1997-02-12",
+    "setor": "Dev",
+    "funcao": "Dev",
+    "experiencia": "Sénior",
+    "tipoDeTrabalho": "Remoto",
+    "salario": 5500
+  }
+]
