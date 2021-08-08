@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroFuncionario.API", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroFuncionario.API.Testes", "CadastroFuncionario.API.Testes\CadastroFuncionario.API.Testes.csproj", "{EA985016-19AB-4052-A46A-0325209C94AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroFuncionario.BibliotecaDeAcessoADados", "CadastroFuncionario.BibliotecaDeAcessoADados\CadastroFuncionario.BibliotecaDeAcessoADados.csproj", "{7014F96F-6500-40EC-8B0F-2FA32B1725ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{EA985016-19AB-4052-A46A-0325209C94AE}.Release|x64.Build.0 = Release|Any CPU
 		{EA985016-19AB-4052-A46A-0325209C94AE}.Release|x86.ActiveCfg = Release|Any CPU
 		{EA985016-19AB-4052-A46A-0325209C94AE}.Release|x86.Build.0 = Release|Any CPU
+		{7014F96F-6500-40EC-8B0F-2FA32B1725ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7014F96F-6500-40EC-8B0F-2FA32B1725ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7014F96F-6500-40EC-8B0F-2FA32B1725ED}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7014F96F-6500-40EC-8B0F-2FA32B1725ED}.Debug|x64.Build.0 = Debug|Any CPU
+		{7014F96F-6500-40EC-8B0F-2FA32B1725ED}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7014F96F-6500-40EC-8B0F-2FA32B1725ED}.Debug|x86.Build.0 = Debug|Any CPU
+		{7014F96F-6500-40EC-8B0F-2FA32B1725ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7014F96F-6500-40EC-8B0F-2FA32B1725ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7014F96F-6500-40EC-8B0F-2FA32B1725ED}.Release|x64.ActiveCfg = Release|Any CPU
+		{7014F96F-6500-40EC-8B0F-2FA32B1725ED}.Release|x64.Build.0 = Release|Any CPU
+		{7014F96F-6500-40EC-8B0F-2FA32B1725ED}.Release|x86.ActiveCfg = Release|Any CPU
+		{7014F96F-6500-40EC-8B0F-2FA32B1725ED}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
